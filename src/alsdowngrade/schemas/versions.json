@@ -1,0 +1,101 @@
+{
+  "document_major_version": {
+    "observed_live_11_and_12": "5",
+    "note": "MajorVersion is NOT the marketing Live major."
+  },
+  "fingerprints": {
+    "live12_0_demo_public": {
+      "status": "DOCUMENTED",
+      "source": "mslinn/live_set README + author docs (Ableton Live 12 Demo)",
+      "MajorVersion": "5",
+      "MinorVersion": "12.0_12049",
+      "SchemaChangeCount": "7",
+      "Creator_examples": ["Ableton Live 12.0", "Ableton Live 12.0.1"],
+      "Revision": "VARIES"
+    },
+    "live11_3_21_target": {
+      "status": "DOCUMENTED",
+      "id": "11.3.21",
+      "label": "11.3",
+      "source": "mslinn/live_set modify_als target + author docs",
+      "MajorVersion": "5",
+      "MinorVersion": "11.0_11300",
+      "SchemaChangeCount": "3",
+      "Creator": "Ableton Live 11.3.21",
+      "Revision": "5ac24cad7c51ea0671d49e6b4885371f15b57c1e"
+    },
+    "live11_3_22_observed": {
+      "status": "DOCUMENTED",
+      "id": "11.3.22",
+      "label": "11.3",
+      "source": "mslinn author article Test1.als example",
+      "MajorVersion": "5",
+      "MinorVersion": "11.0_11300",
+      "SchemaChangeCount": "3",
+      "Creator": "Ableton Live 11.3.22",
+      "Revision": "86c4913d7978d564614e61d7105424edb3d2ee4b"
+    },
+    "live11_2_11_target": {
+      "status": "DOCUMENTED",
+      "id": "11.2.11",
+      "label": "11.2",
+      "source": "Public Ableton Live 11.2.11 Library.cfg / template samples (e.g. akaudio-dev/akaudio Live11Template.xml, PCO-Ableton live-11.xml)",
+      "MajorVersion": "5",
+      "MinorVersion": "11.0_11202",
+      "SchemaChangeCount": "17",
+      "Creator": "Ableton Live 11.2.11",
+      "Revision": "6e9e7c6913378fcbbe8b18e3fd8f33d0755968b8"
+    },
+    "live11_2_7_target": {
+      "status": "DOCUMENTED",
+      "id": "11.2.7",
+      "label": "11.2",
+      "source": "Public Ableton Live 11.2.7 Library.cfg samples (vindennl48/dotfiles)",
+      "MajorVersion": "5",
+      "MinorVersion": "11.0_11202",
+      "SchemaChangeCount": "11",
+      "Creator": "Ableton Live 11.2.7",
+      "Revision": "2509d781e7fb8da117f2c3c7f697e1116a198306"
+    },
+    "live11_1_target": {
+      "status": "DOCUMENTED",
+      "id": "11.1",
+      "label": "11.1",
+      "source": "drj-io/abletron versions.js (MIT)",
+      "MajorVersion": "5",
+      "MinorVersion": "11.0_436",
+      "SchemaChangeCount": "7",
+      "Creator": "Ableton Live 11.1",
+      "Revision": ""
+    },
+    "live11_0_12_target": {
+      "status": "DOCUMENTED",
+      "id": "11.0.12",
+      "label": "11.0",
+      "source": "drj-io/abletron versions.js (MIT)",
+      "MajorVersion": "5",
+      "MinorVersion": "11.0_433",
+      "SchemaChangeCount": "6",
+      "Creator": "Ableton Live 11.0.12",
+      "Revision": ""
+    }
+  },
+  "target_aliases": {
+    "11": "live11_2_11_target",
+    "11.x": "live11_2_11_target",
+    "11.2": "live11_2_11_target",
+    "11.2.11": "live11_2_11_target",
+    "11.2.7": "live11_2_7_target",
+    "11.3": "live11_3_21_target",
+    "11.3.21": "live11_3_21_target",
+    "11.3.22": "live11_3_22_observed",
+    "11.1": "live11_1_target",
+    "11.0": "live11_0_12_target",
+    "11.0.12": "live11_0_12_target"
+  },
+  "unknown": {
+    "live12_1_plus_exact_schema_counts": "UNKNOWN",
+    "live12_point_release_targets": "UNKNOWN",
+    "live10_and_live9_targets": "UNKNOWN"
+  }
+}

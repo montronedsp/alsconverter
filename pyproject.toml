@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alsdowngrade"
+version = "0.1.0"
+description = "Local/offline Ableton Live Set downgrader (schema-aware, non-destructive)"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Ableton Live Set Downgrader contributors" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+build = ["pyinstaller>=6.0"]
+
+[project.scripts]
+alsdowngrade = "alsdowngrade.cli:main"
+alsdowngrade-gui = "alsdowngrade.gui:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+alsdowngrade = ["schemas/*.json", "schemas/compatibility_rules/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

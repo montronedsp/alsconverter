@@ -1,0 +1,125 @@
+{
+  "live12_to_live11": {
+    "status": "EXPERIMENTAL",
+    "tested_sources": ["synthetic_live12_minimal", "synthetic_live12_with_l12_nodes"],
+    "tested_targets": [],
+    "live_tested": false,
+    "target_fingerprint": "live11_3_21_target",
+    "modes": {
+      "conservative": "Refuse if known Live12-only devices/structures present; still apply metadata + AudioOut rename when clear",
+      "compatible": "Remove known incompatible structures; warn",
+      "salvage": "Same removals as compatible; prefer preserving tracks after device removal"
+    },
+    "rules": [
+      {
+        "id": "root_metadata_to_live11_3_21",
+        "source": "12.x",
+        "target": "11.x",
+        "selector": "Ableton/@*",
+        "action": "map_root_metadata",
+        "reason": "Older Live rejects Sets whose root version fingerprint is newer",
+        "evidence": "mslinn/live_set modify_als; Ableton backward-compat docs",
+        "risk": "medium",
+        "modes": ["conservative", "compatible", "salvage"]
+      },
+      {
+        "id": "audioout_main_to_master",
+        "source": "12.x",
+        "target": "11.x",
+        "selector": "text:AudioOut/Main",
+        "action": "map_value",
+        "reason": "Live 12 routing uses Main; Live 11 uses Master",
+        "evidence": "mslinn/live_set modify_als + author docs",
+        "risk": "low",
+        "modes": ["conservative", "compatible", "salvage"]
+      },
+      {
+        "id": "remove_content_lanes",
+        "source": "12.x",
+        "target": "11.x",
+        "selector": ".//ContentLanes",
+        "action": "remove",
+        "reason": "Live 12 content/take-lane oriented structure not expected by Live 11",
+        "evidence": "mslinn/live_set xpath removal list",
+        "risk": "medium",
+        "modes": ["compatible", "salvage"]
+      },
+      {
+        "id": "remove_expression_lanes",
+        "source": "12.x",
+        "target": "11.x",
+        "selector": ".//ExpressionLanes",
+        "action": "remove",
+        "reason": "Live 12 expression lane structure",
+        "evidence": "mslinn/live_set xpath removal list",
+        "risk": "medium",
+        "modes": ["compatible", "salvage"]
+      },
+      {
+        "id": "remove_instrument_meld",
+        "source": "12.x",
+        "target": "11.x",
+        "selector": ".//InstrumentMeld",
+        "action": "remove",
+        "reason": "Native Live 12 Meld device",
+        "evidence": "mslinn/live_set xpath removal list",
+        "risk": "high",
+        "modes": ["compatible", "salvage"]
+      },
+      {
+        "id": "remove_roar",
+        "source": "12.x",
+        "target": "11.x",
+        "selector": ".//Roar",
+        "action": "remove",
+        "reason": "Native Live 12 Roar device",
+        "evidence": "mslinn/live_set xpath removal list",
+        "risk": "high",
+        "modes": ["compatible", "salvage"]
+      },
+      {
+        "id": "remove_mx_patch_ref",
+        "source": "12.x",
+        "target": "11.x",
+        "selector": ".//MxPatchRef",
+        "action": "remove",
+        "reason": "Referenced Live 12-oriented Max patch linkage removed by public converter",
+        "evidence": "mslinn/live_set xpath removal list",
+        "risk": "medium",
+        "modes": ["compatible", "salvage"]
+      },
+      {
+        "id": "remove_oversampling",
+        "source": "12.x",
+        "target": "11.x",
+        "selector": ".//Oversampling",
+        "action": "remove",
+        "reason": "Oversampling node removed by public Live 12→11 converter",
+        "evidence": "mslinn/live_set xpath removal list",
+        "risk": "low",
+        "modes": ["compatible", "salvage"]
+      }
+    ]
+  },
+  "live12_point_release": {
+    "status": "RESEARCH",
+    "tested_sources": [],
+    "tested_targets": [],
+    "live_tested": false,
+    "rules": []
+  },
+  "live11_to_live10": {
+    "status": "RESEARCH",
+    "tested_sources": [],
+    "tested_targets": [],
+    "live_tested": false,
+    "rules": []
+  },
+  "live10_to_live9": {
+    "status": "RESEARCH",
+    "tested_sources": [],
+    "tested_targets": [],
+    "live_tested": false,
+    "rules": []
+  }
+}

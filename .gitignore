@@ -1,0 +1,35 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Tool outputs (generated conversions & reports)
+output/*
+!output/.gitkeep
+
+# Private / commercial Ableton sessions — NEVER commit
+private_fixtures/
+*.als
+!tests/fixtures/*.als
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Sensitive reports that may contain absolute paths
+reports/
+
+# PyInstaller
+*.spec
